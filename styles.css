@@ -1,21 +1,24 @@
+/* General Styles */
 body {
+    background-color: #000; /* Black background */
+    color: #fff;            /* White text */
     font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
-    background-color: #f4f4f9;
 }
 
+/* Header Styles */
 header {
-    background: #333;
+    background: #111;       /* Slightly lighter black for contrast */
     color: #fff;
     padding: 10px 0;
     text-align: center;
 }
 
+/* Navigation Menu */
 nav ul {
     padding: 0;
     list-style: none;
-    background: #444;
     text-align: center;
 }
 
@@ -27,14 +30,26 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
+nav ul li a:hover {
+    color: #ccc;            /* Grey hover effect */
+}
+
+/* Main Content */
 main {
     margin-top: 20px;
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     margin-top: 20px;
     color: #777;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
 }
