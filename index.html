@@ -2,33 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uninterrupted Audio with Iframe</title>
-    <link rel="stylesheet" href="pages/style.css">
+    <title>Welcome</title>
+    <style>
+        /* Fullscreen background */
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Centered button */
+        .button-container {
+            text-align: center;
+        }
+
+        .image-button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            height: auto;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
+    <div class="button-container">
+        <!-- Image Button -->
+        <button class="image-button" onclick="startAudioAndRedirect()">
+            <img src="pages/assets/image/door.png" alt="Click to Enter" width="200">
+        </button>
 
-    <!-- Audio Player (Plays continuously) -->
-    <audio id="background-audio" controls autoplay loop>
-        <source src="pages/assets/audio/purple.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
-    </audio>
+        <!-- Hidden Audio -->
+        <audio id="background-audio" src="pages/assets/audio/purple.mp3"></audio>
+    </div>
 
-    <!-- Navigation Links (Main) -->
-    <nav>
-        <a href="pages/home.html" target="content-frame">Home</a> |
-        <a href="pages/film-photography.html" target="content-frame">Film Photography</a> |
-        <a href="pages/favorite-things.html" target="content-frame">Favorite Things</a> |
-        <a href="pages/gamedev.html" target="content-frame">Gamedev</a> |
-        <a href="pages/music.html" target="content-frame">Music</a> |
-        <a href="pages/paintings.html" target="content-frame">Paintings</a> |
-        <a href="pages/drawings.html" target="content-frame">Drawings</a> |
-        <a href="pages/thoughts.html" target="content-frame">Thoughts</a> |
-        <a href="pages/credits.html" target="content-frame">Credits</a>
-    </nav>
+    <script>
+        function startAudioAndRedirect() {
+            // Play audio
+            const audio = document.getElementById('background-audio');
+            audio.play();
 
-    <!-- Content Area (Loads subpages) -->
-    <iframe name="content-frame" src="pages/home.html"></iframe>
-
+            // Redirect after a short delay
+            setTimeout(() => {
+                window.location.href = 'fake-index.html';
+            }, 300); // Adjust delay as needed
+        }
+    </script>
 </body>
 </html>
