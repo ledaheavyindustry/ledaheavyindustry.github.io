@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Test</title>
+</head>
+<body>
+    <button onclick="startAudio()">Play Music</button>
+
+    <script>
+        function startAudio() {
+            const audio = new Audio('assets/audio/purple.mp3');
+            audio.loop = true;
+            audio.autoplay = true;
+
+            // Attempt to play the audio
+            audio.play().then(function() {
+                console.log("Audio is playing!");
+            }).catch(function(error) {
+                console.log("Autoplay failed: ", error);
+                alert("Please click to play the audio.");
+            });
+        }
+    </script>
+</body>
+</html>
