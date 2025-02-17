@@ -20,23 +20,27 @@
             text-align: center;
         }
 
-        .image-button {
-            border: none;
-            background: none;
+        .enter-button {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: white;
+            background-color: #444;
+            border: 2px solid white;
+            border-radius: 10px;
             cursor: pointer;
-            height: auto;
         }
 
-        .image-button:hover {
+        .enter-button:hover {
+            background-color: #666;
             transform: scale(1.1);
         }
     </style>
 </head>
 <body>
     <div class="button-container">
-        <!-- Image Button -->
-        <button class="image-button" onclick="startAudioAndRedirect()">
-            <img src="/ledaheavyindustry.github.io/pages/assets/image/door.png" alt="Click to Enter" width="200">
+        <!-- Text Button -->
+        <button class="enter-button" onclick="startAudioAndRedirect()">
+            Enter
         </button>
 
         <!-- Hidden Audio -->
