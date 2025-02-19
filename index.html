@@ -3,45 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <link rel="stylesheet" href="pages/style.css">
     <style>
-        /* Fullscreen background */
+        /* Ensure font is applied */
         body {
-            background-color: black;
-            color: white;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            height: 100vh; /* Full viewport height */
+            flex-direction: column;
+            font-family: 'Orbitron', sans-serif; /* Make sure font is applied */
+            cursor: url('pages/assets/image/cursor_b.webp'), auto; /* Custom cursor */
         }
-        
-        /* Centered button */
+
+        /* Centered content */
         .button-container {
             text-align: center;
         }
 
-        .enter-button {
+        /* Proceed text */
+        .proceed-text {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for buttons */
+        .decision-button {
             padding: 10px 20px;
-            font-size: 20px;
+            font-size: 10px;
             color: white;
-            background-color: #444;
+            background-color: black;
             border: 2px solid white;
             border-radius: 10px;
             cursor: pointer;
+            margin: 10px;
+            font-family: 'Orbitron', sans-serif; /* Ensures font is applied */
         }
 
-        .enter-button:hover {
-            background-color: #666;
-            transform: scale(1.1);
+        .decision-button:hover {
+            background-color: #444;
+            cursor: url('pages/assets/image/cursor_b.webp'), auto; /* Custom cursor on hover */
         }
     </style>
 </head>
 <body>
     <div class="button-container">
-        <!-- Text Button -->
-        <button class="enter-button" onclick="startAudioAndRedirect()">
-            Enter
-        </button>
+        <!-- Proceed Text -->
+        <div class="proceed-text">proceed?</div>
+
+        <!-- Yes and No Buttons -->
+        <button class="decision-button" onclick="startAudioAndRedirect()">yes</button>
+        <button class="decision-button">no</button> 
 
         <!-- Hidden Audio -->
         <audio id="background-audio" src="pages/assets/audio/purple.mp3"></audio>
@@ -49,14 +61,11 @@
 
     <script>
         function startAudioAndRedirect() {
-            // Play audio
             const audio = document.getElementById('background-audio');
             audio.play();
-
-            // Redirect after a short delay
             setTimeout(() => {
                 window.location.href = 'fake-index.html';
-            }, 300); // Adjust delay as needed
+            }, 300);
         }
     </script>
 </body>

@@ -85,36 +85,6 @@ audio {
     display: none;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    body {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        left: 0;
-        padding-top: 2vh;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .sidebar a {
-        margin: 0.5rem;
-    }
-
-    .content {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    iframe {
-        width: 100%;
-        height: 80vh;
-    }
-}
 
 /* Center and Resize Only the Credits Image Without Scrollbar */
 .credits-image {
