@@ -1,4 +1,3 @@
-<!-- Called fake index since this was orignally the index but I needed a welcome page to trigger the audio so I added a new index but I left this one since it handles the subpages logic -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,21 +14,29 @@
         Your browser does not support the audio tag.
     </audio>
 
-    <!-- Navigation Links (Main) -->
-    <nav>
-        <a href="pages/home.html" target="content-frame">Home</a> |
-        <a href="pages/film-photography.html" target="content-frame">Film Photography</a> |
-        <a href="pages/favorite-things.html" target="content-frame">Favorite Things</a> |
-        <a href="pages/gamedev.html" target="content-frame">Gamedev</a> |
-        <a href="pages/music.html" target="content-frame">Music</a> |
-        <a href="pages/paintings.html" target="content-frame">Paintings</a> |
-        <a href="pages/drawings.html" target="content-frame">Drawings</a> |
-        <a href="pages/thoughts.html" target="content-frame">Thoughts</a> |
+    <!-- Navigation Sidebar -->
+    <div class="sidebar">
+        <a href="pages/home.html" target="content-frame">Home</a>
+
+        <h2>My Craft</h2>
+        <a href="pages/film-photography.html" target="content-frame">Film Photography</a>
+        <a href="pages/gamedev.html" target="content-frame">Gamedev</a>
+        <a href="pages/music.html" target="content-frame">Music</a>
+        <a href="pages/paintings.html" target="content-frame">Paintings</a>
+        <a href="pages/drawings.html" target="content-frame">Drawings</a>
+
+        <h2>My Soul</h2>
+        <a href="pages/thoughts.html" target="content-frame">Thoughts</a>
+        <a href="pages/favorite-things.html" target="content-frame">Favorite Things</a>
+        
+        <h2></h2>
         <a href="pages/credits.html" target="content-frame">Credits</a>
-    </nav>
+    </div>
 
     <!-- Content Area (Loads subpages) -->
-    <iframe name="content-frame" src="pages/home.html"></iframe>
+    <div class="content">
+        <iframe name="content-frame" src="pages/home.html"></iframe>
+    </div>
 
 </body>
 </html>

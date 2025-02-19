@@ -2,34 +2,105 @@ body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Center content dynamically */
+    align-items: flex-start;
+    height: 100vh;
 }
 
-nav {
-    margin: 20px;
+/* Navigation Sidebar */
+.sidebar {
+    width: 15vw; /* Scales based on screen width */
+    max-width: 200px; /* Prevents it from getting too big */
+    height: 100vh;
+    padding-top: 10vh; /* Moves it down dynamically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 10vw; /* Adjusts position based on screen size */
 }
 
-nav a {
+/* Groupings for Navigation */
+.sidebar h2 {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+/* Navigation Links */
+.sidebar a {
     color: white;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
     border: 1px solid white;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-nav a:hover {
+.sidebar a:hover {
     background-color: gray;
 }
 
-iframe {
-    border: none;
-    width: 100%;
-    height: 80vh;
+/* Main Content */
+.content {
+    margin-left: auto; /* Adjusts dynamically */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 2vw;
 }
 
+/* Iframe */
+iframe {
+    border: none;
+    width: 80%;
+    height: 90vh;
+}
+
+/* Hidden Audio */
 audio {
-    margin: 10px;
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        left: 0;
+        padding-top: 2vh;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sidebar a {
+        margin: 0.5rem;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+        height: 80vh;
+    }
 }
