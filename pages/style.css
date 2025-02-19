@@ -85,7 +85,6 @@ audio {
     display: none;
 }
 
-
 /* Center and Resize Only the Credits Image Without Scrollbar */
 .credits-image {
     display: flex;
@@ -101,4 +100,20 @@ audio {
     object-fit: contain;
     border: 1px solid white; /* Adds a white border */
     padding: 5px; /* Optional: Adds space inside the border */
+}
+
+.journal {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    height: 70%;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.journal p {
+    font-size: 13px;
+    line-height: 1.5;
 }
