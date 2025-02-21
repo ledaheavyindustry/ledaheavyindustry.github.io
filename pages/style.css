@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    left: 10vw; /* Adjusts position based on screen size */
+    left: 20vw; /* Adjusts position based on screen size */
 }
 
 /* Groupings for Navigation */
