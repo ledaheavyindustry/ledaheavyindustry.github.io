@@ -12,23 +12,32 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Center content dynamically */
+    justify-content: space-between;
     align-items: flex-start;
     height: 100vh;
     cursor: url('assets/image/cursor_b.webp'), auto;
 }
 
-/* Navigation Sidebar */
+/* Common Sidebar Styles */
 .sidebar {
-    width: 15vw; /* Scales based on screen width */
-    max-width: 200px; /* Prevents it from getting too big */
+    width: 15vw;
+    max-width: 200px;
     height: 100vh;
-    padding-top: 10vh; /* Moves it down dynamically */
+    padding-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    left: 20vw; /* Adjusts position based on screen size */
+}
+
+/* Left Sidebar Specific */
+.left-sidebar {
+    left: 20vw;
+}
+
+/* Right Sidebar Specific */
+.right-sidebar {
+    right: 20vw;
 }
 
 /* Groupings for Navigation */
@@ -50,10 +59,10 @@ body {
     margin: 0.4rem 0;
     width: 70%;
     text-align: center;
-    border: 0px solid white; /*Removing the border by putting it to 0*/
+    border: 0px solid white;
     border-radius: 5px;
     transition: background-color 0.3s;
-    font-size: 0.7rem ;
+    font-size: 0.7rem;
     cursor: url('assets/image/cursor_b.webp'), pointer;
 }
 
@@ -64,19 +73,19 @@ body {
 
 /* Main Content */
 .content {
-    margin-left: auto; /* Adjusts dynamically */
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
     padding: 2vw;
+    max-width: 60%;
 }
 
 /* Iframe */
 iframe {
     border: none;
-    width: 80%;
+    width: 100%;
     height: 90vh;
 }
 
@@ -89,17 +98,17 @@ audio {
 .credits-image {
     display: flex;
     justify-content: center;
-    align-items: center; /* Perfectly center the image */
-    height: 80vh; /* Full viewport height */
-    overflow: hidden; /* Prevents any unwanted scrollbars */
+    align-items: center;
+    height: 80vh;
+    overflow: hidden;
 }
 
 .credits-image img {
-    max-width: 40vw; /* Resize image width dynamically */
-    max-height: 40vh; /* Resize image height dynamically */
+    max-width: 40vw;
+    max-height: 40vh;
     object-fit: contain;
-    border: 1px solid white; /* Adds a white border */
-    padding: 5px; /* Optional: Adds space inside the border */
+    border: 1px solid white;
+    padding: 5px;
 }
 
 .journal {
@@ -117,3 +126,39 @@ audio {
     font-size: 13px;
     line-height: 1.5;
 }
+
+@media screen and (max-width: 1400px) {
+    .left-sidebar {
+      left: 10vw;
+    }
+    
+    .right-sidebar {
+      right: 10vw;
+    }
+  }
+  
+  @media screen and (max-width: 1100px) {
+    .left-sidebar {
+      left: 0;
+    }
+    
+    .right-sidebar {
+      right: 0;
+    }
+    
+    .content {
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .sidebar {
+      width: 12vw;
+      min-width: 100px;
+    }
+    
+    .sidebar a {
+      font-size: 0.6rem;
+      padding: 0.7rem;
+    }
+  }
