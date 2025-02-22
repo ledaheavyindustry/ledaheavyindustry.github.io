@@ -162,3 +162,27 @@ audio {
       padding: 0.7rem;
     }
   }
+
+.image-container {
+    position: relative;
+    width: 500px; /* Keeps images within a defined space */
+    height: 350px;
+}
+
+.image-container img {
+    position: absolute;
+    max-width: 100px;
+    height: auto;
+    padding: 5px;
+}
+
+/* Positioning each image manually for a scattered effect */
+.img1 { top: 10px; left: 30px;  }
+.img2 { top: 50px; left: 120px;}
+.img3 { top: 90px; left: 70px; }
+.img4 { top: 130px; left: 200px }
+.img5 { top: 20px; left: 250px; }
+.img6 { top: 60px; left: 180px;}
+.img7 { top: 100px; left: 40px; }
+.img8 { top: 150px; left: 90px; }
+.img9 { top: 30px; left: 170px;  }
