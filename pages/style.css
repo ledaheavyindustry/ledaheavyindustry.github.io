@@ -211,3 +211,13 @@ audio {
 .img7 { top: 300px; left: 0px; transform: rotate(0deg) scale(1);} /*done*/
 .img8 { top: 650px; left: 330px; transform: rotate(150deg) scale(1.5);} /*done*/
 .img9 { top: 400px; left: 170px; transform: rotate(0deg) scale(1);} /*done*/
+
+.pre-banner {
+    width: 350px; /* Increase the width */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 0px; /* Keep spacing */
+}
+
+<img src="pages/assets/image/pre_banner.jpg" alt="Pre Banner" class="pre-banner" style="width: 350px; height: auto;">
+
