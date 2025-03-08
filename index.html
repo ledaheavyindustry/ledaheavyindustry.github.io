@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000">
     <title>Welcome</title>
     <link rel="stylesheet" href="pages/style.css">
     <style>
@@ -14,17 +15,20 @@
             flex-direction: column;
             font-family: 'Orbitron', sans-serif; /* Make sure font is applied */
             cursor: url('pages/assets/image/cursor_b.webp'), auto; /* Custom cursor */
+            min-width: 1000px; /* Minimum width to ensure horizontal scrolling */
+            overflow-x: auto;
         }
 
         /* Centered content */
         .button-container {
             text-align: center;
             margin-top: -250px;
+            width: 350px; /* Fixed width */
         }
 
         /* Banner image styling */
         .pre-banner {
-            width: 250px; /* Adjust as needed */
+            width: 250px; /* Fixed width */
             margin-bottom: 15px; /* Space between the banner and "proceed?" */
         }
 
@@ -57,18 +61,14 @@
     <div class="button-container">
         <!-- Banner Image -->
         <img src="pages/assets/image/pre_banner.jpg" alt="Pre Banner" class="pre-banner">
-
         <!-- Proceed Text -->
         <div class="proceed-text">proceed?</div>
-
         <!-- Yes and No Buttons -->
         <button class="decision-button" onclick="startAudioAndRedirect()">yes</button>
-        <button class="decision-button">no</button> 
-
+        <button class="decision-button">no</button>
         <!-- Hidden Audio -->
         <audio id="background-audio" src="pages/assets/audio/purple.mp3"></audio>
     </div>
-
     <script>
         function startAudioAndRedirect() {
             const audio = document.getElementById('background-audio');
