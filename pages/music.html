@@ -16,23 +16,30 @@
             align-items: center;
             overflow: hidden;
         }
-        
-        /* Fixed width container */
-        .page-container {
-            width: 800px;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <p>Music</p>
+    <div class="catalog">
+        <div class="catalog-header">
+            <h2>Music</h2>
+        </div>
+        
+        <div class="catalog-item catalog-item-full has-video">
+            <div class="catalog-item-video">
+                <video controls poster="assets/content/music/den_spanska_thumbnail.png">
+                    <source src="assets/content/music/den_spanska.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-details">
+                <h3 class="video-title">+ den spanska känslan + cover</h3>
+                <p class="video-description">thall</p>
+            </div>
+        </div>
+            
+            </div>            
+            <!-- Many more items can be added, the container will scroll -->
+        </div>
     </div>
-    <!-- Internal Navigation -->
-    <nav>
-    </nav>
 </body>
 </html>

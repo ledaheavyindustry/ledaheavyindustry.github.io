@@ -209,6 +209,75 @@ audio {
 }
 
 /* ==================== */
+/* CUSTOM SCROLLBAR     */
+/* ==================== */
+
+/* For Webkit browsers (Chrome, Safari, newer versions of Opera) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+    border: 1px solid #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background: #111;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #444 #111;
+}
+
+/* For Edge and Internet Explorer */
+body {
+    -ms-overflow-style: none;
+}
+
+/* Specifically target the catalog's scrollbar */
+.catalog {
+    /* Make sure the catalog has its own scrollbar */
+    overflow-y: auto;
+    
+    /* Apply custom scrollbar to the catalog */
+    scrollbar-width: thin;
+    scrollbar-color: #444 #111;
+}
+
+.catalog::-webkit-scrollbar {
+    width: 8px;
+}
+
+.catalog::-webkit-scrollbar-track {
+    background: #0a0a0a;
+    border: 1px solid #333;
+}
+
+.catalog::-webkit-scrollbar-thumb {
+    background: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.catalog::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ==================== */
 /* CATALOG STYLES       */
 /* ==================== */
 
@@ -291,9 +360,32 @@ audio {
 
 .catalog-item-video video {
     max-width: 100%;
-    max-height: 180px;
+    max-height: 250px; /* Increased from 180px to 250px */
     width: auto;
     height: auto;
+}
+
+/* Video details container */
+.video-details {
+    padding: 15px;
+    background-color: #111;
+    border-top: 1px solid #333;
+    display: block; /* Ensure this is displayed */
+}
+
+/* Video title styling */
+.video-title {
+    font-size: 1.4rem;
+    margin: 0 0 8px 0;
+    color: #fff;
+}
+
+/* Video description styling */
+.video-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    color: #ccc;
 }
 
 /* Catalog Item Text */
@@ -305,7 +397,7 @@ audio {
 .catalog-item-full {
     grid-column: 1 / -1;
     padding: 0;
-    border: 1px solid #333;
+    border: 1px solid #4b4b4b;
     max-height: 400px; /* Added height constraint */
     overflow: hidden; /* Prevent overflow */
 }
@@ -323,6 +415,43 @@ audio {
     width: 100%;
     max-width: 100%;
     object-fit: cover; /* Changed to cover to maintain aspect ratio while filling width */
+}
+
+/* Full Width Item for Videos - special handling */
+.catalog-item-full.has-video {
+    max-height: none; /* Remove height constraint completely */
+    display: flex;
+    flex-direction: column;
+    overflow: visible; /* Allow content to flow naturally */
+    padding-bottom: 0; /* Remove padding to allow details to fit flush */
+    margin-bottom: 30px; /* Add spacing between video items */
+}
+
+/* Remove margin from the last video to avoid extra space at bottom */
+.catalog-grid .catalog-item-full.has-video:last-child {
+    margin-bottom: 0;
+}
+
+/* Video container adjustments */
+.catalog-item-full.has-video .catalog-item-video {
+    height: auto;
+    max-height: 450px; /* Set max height just for the video itself */
+    overflow: hidden;
+}
+
+.catalog-item-full.has-video .catalog-item-video video {
+    max-height: 450px; /* Match the container */
+    width: 100%;
+}
+
+/* Only apply these styles to full-width video items */
+.catalog-item-full .catalog-item-video video {
+    max-height: 450px; /* Increased height for full-width videos */
+}
+
+/* Make sure these styles only affect video items, not other catalog items */
+.catalog-item:not(.catalog-item-full) .video-details {
+    padding: 8px 10px;
 }
 
 /* Vertical Container - spans two rows */
