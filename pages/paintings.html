@@ -19,11 +19,52 @@
     </style>
 </head>
 <body>
-    <p>Paintings</p>
-    
-    <!-- Internal Navigation -->
-    <nav>
+    <div class="catalog">
+        <div class="catalog-header">
+            <h2>Paintings</h2>
+        </div>
+        
+            <!-- Example usage of the vertical container -->
+            <div class="catalog-grid">
+                <!-- Full width banner image -->
+                <div class="catalog-item catalog-item-full">
+                    <div class="catalog-item-image">
+                        <img src="assets/content/paintings/still_2.png" alt="Banner">
+                    </div>
+                </div>
 
-    </nav>
+                <!-- Vertical item that spans two rows -->
+                <div class="catalog-item catalog-item-vertical">
+                    <div class="catalog-item-image">
+                        <img src="assets/content/paintings/swiss_1.jpg" alt="Vertical Painting">
+                    </div>
+                </div>
+
+                <!-- Regular items -->
+                <div class="catalog-item">
+                    <div class="catalog-item-image">
+                        <img src="assets/content/paintings/still_2_zoom.png" alt="Painting 1">
+                    </div>
+                </div>
+
+                <div class="catalog-item">
+                    <div class="catalog-item-image">
+                        <img src="assets/content/paintings/still_1_zoom.jpg" alt="Painting 2">
+                    </div>
+                </div>
+
+                <!-- More regular items -->
+                <div class="catalog-item catalog-item-full">
+                    <div class="catalog-item-image">
+                        <img src="assets/content/paintings/still_1.jpg" alt="Painting 3">
+                    </div>
+                </div>
+
+
+            
+            </div>            
+            <!-- Many more items can be added, the container will scroll -->
+        </div>
+    </div>
 </body>
 </html>
