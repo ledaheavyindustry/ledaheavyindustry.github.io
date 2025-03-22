@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Orbitron';
-    src: url('assets/font/my_font.ttf') format('truetype');
+    font-family: 'RetroByte';
+    src: url('assets/font/RetroByte.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -8,7 +8,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'RetroByte', sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -53,7 +53,7 @@ body {
 /* Groupings for Navigation */
 .sidebar h2 {
     color: white;
-    font-size: 1rem;
+    font-size: 4rem;
     margin-top: 20px;
     text-align: center;
     border-bottom: 1px solid white;
@@ -72,7 +72,7 @@ body {
     border: 0px solid white;
     border-radius: 5px;
     transition: background-color 0.3s;
-    font-size: 0.7rem;
+    font-size: 1rem;
     cursor: url('assets/image/cursor_b.webp'), pointer;
 }
 
