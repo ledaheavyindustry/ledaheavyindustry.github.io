@@ -590,6 +590,22 @@ body {
     opacity: 0.9;
 }
 
+/* Square Item Styling */
+.square-item {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.square-item .catalog-item-image {
+    height: 100%;
+}
+
+.square-item .catalog-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .music-catalog-grid {
