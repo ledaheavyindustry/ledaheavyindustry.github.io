@@ -618,3 +618,78 @@ body {
         grid-template-columns: repeat(1, 1fr) !important;
     }
 }
+
+/* ==================== */
+/* THOUGHTS STYLES      */
+/* ==================== */
+
+/* Default page layout */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Thoughts container */
+.thoughts-container {
+    width: 600px;
+    height: 80vh;
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Thoughts header */
+.thoughts-header {
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.thoughts-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Thought entry styling */
+.thought-entry {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.thought-entry:last-child {
+    border-bottom: none;
+}
+
+/* Date/log identifier */
+.thought-date {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+/* Content styling */
+.thought-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.thought-content p {
+    margin: 8px 0;
+}
+
+.thought-content p::before {
+    content: "-> ";
+    color: #666;
+}
