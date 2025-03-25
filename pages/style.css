@@ -128,18 +128,61 @@ audio {
     display: none;
 }
 
-/* Center and Resize Only the Credits Image Without Scrollbar */
+/* ==================== */
+/* CREDITS STYLES       */
+/* ==================== */
+
+/* Credits container */
+.credits-container {
+    width: 600px;
+    height: 80vh;
+    background-color: #000;
+    border: 1px solid #333;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Credits header */
+.credits-header {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.credits-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Credits content */
+.credits-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Center and size the Credits Image */
 .credits-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    overflow: hidden;
+    width: 100%;
+    padding: 20px;
 }
 
 .credits-image img {
-    max-width: 320px;
-    max-height: 320px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
     object-fit: contain;
     border: 1px solid white;
     padding: 5px;
