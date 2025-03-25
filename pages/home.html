@@ -5,36 +5,68 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* These styles ensure the page content fits properly in the iframe */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
             overflow: hidden;
         }
         
-        .home-container {
+        /* Create a fixed-size viewport that matches the iframe dimensions */
+        .viewport-container {
             width: 800px;
+            height: 90vh;
             position: relative;
+            overflow: hidden;
         }
+        
+        /* Fixed title positioning */
+        .title {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            font-size: 2rem;
+            width: max-content;
+            white-space: nowrap;
+            text-align: center;
+        }
+        
+        /* Fixed positions for all stars - use percentages instead of pixels */
+        .star {
+            position: absolute;
+            max-width: 100px;
+            height: auto;
+        }
+        
+        .img1 { top: 80%; left: 3.75%; transform: rotate(0deg) scale(4.5); }
+        .img2 { top: 58%; left: 87.5%; transform: rotate(150deg) scale(1.1); }
+        .img3 { top: 11%; left: 65%; margin: 0; padding: 0; transform: scale(4.6); }
+        .img4 { top: 28%; left: 68.75%; transform: rotate(150deg) scale(1); }
+        .img5 { top: 22%; left: 18.75%; transform: rotate(150deg) scale(1.5); }
+        .img6 { top: 6.7%; left: 0%; transform: rotate(150deg) scale(1); }
+        .img7 { top: 33.3%; left: 0%; transform: rotate(0deg) scale(1); }
+        .img8 { top: 72.2%; left: 50%; transform: rotate(150deg) scale(1.5); }
+        .img9 { top: 44.4%; left: 25%; transform: rotate(0deg) scale(1); }
     </style>
 </head>
 <body>
-    <div class="home-container">
-        <h1>LEDA HEAVY INDUSTRY</h1>
-        <div class="image-container">
-            <img src="assets/image/stars/star_1.jpg" alt="Image 1" class="img1">
-            <img src="assets/image/stars/star_2.jpg" alt="Image 2" class="img2">
-            <img src="assets/image/stars/star_3.jpg" alt="Image 3" class="img3">
-            <img src="assets/image/stars/star_4.jpg" alt="Image 4" class="img4">
-            <img src="assets/image/stars/star_5.jpg" alt="Image 5" class="img5">
-            <img src="assets/image/stars/star_6.jpg" alt="Image 6" class="img6">
-            <img src="assets/image/stars/star_7.jpg" alt="Image 7" class="img7">
-            <img src="assets/image/stars/star_8.jpg" alt="Image 8" class="img8">
-            <img src="assets/image/stars/star_9.jpg" alt="Image 9" class="img9">
-        </div>
+    <div class="viewport-container">
+        <h1 class="title">LEDA HEAVY INDUSTRY</h1>
+        
+        <!-- Stars with fixed positions using percentages -->
+        <img src="assets/image/stars/star_1.jpg" alt="Star 1" class="star img1">
+        <img src="assets/image/stars/star_2.jpg" alt="Star 2" class="star img2">
+        <img src="assets/image/stars/star_3.jpg" alt="Star 3" class="star img3">
+        <img src="assets/image/stars/star_4.jpg" alt="Star 4" class="star img4">
+        <img src="assets/image/stars/star_5.jpg" alt="Star 5" class="star img5">
+        <img src="assets/image/stars/star_6.jpg" alt="Star 6" class="star img6">
+        <img src="assets/image/stars/star_7.jpg" alt="Star 7" class="star img7">
+        <img src="assets/image/stars/star_8.jpg" alt="Star 8" class="star img8">
+        <img src="assets/image/stars/star_9.jpg" alt="Star 9" class="star img9">
     </div>
 </body>
 </html>
