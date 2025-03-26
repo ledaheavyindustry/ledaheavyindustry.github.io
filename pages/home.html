@@ -76,11 +76,41 @@
             height: 250px;
             border: none;
         }
+        
+        /* Welcome message container styling */
+        .welcome-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 250px;
+            z-index: 20;
+            border: 1px solid #333;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            color: #ddd;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+        
+        .welcome-header {
+            font-size: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="viewport-container">
         <h1 class="title">LEDA HEAVY INDUSTRY</h1>
+        
+        <!-- Welcome Message Container -->
+        <div class="welcome-container">
+            <div class="welcome-header">don't google HP's Lovecraft cat name !!</div>
+            <p>or i will fax you your social security number !!!! </p>
+        </div>
         
         <!-- Stars with fixed positions using percentages -->
         <img src="assets/image/stars/star_1.jpg" alt="Star 1" class="star img1">
