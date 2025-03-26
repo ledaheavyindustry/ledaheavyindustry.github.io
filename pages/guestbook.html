@@ -16,14 +16,31 @@
             align-items: center;
             overflow: hidden;
         }
+        
+        /* Ensure the iframe fills the container and has proper styling */
+        .credits-content iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #333;
+            background-color: #111;
+        }
     </style>
 </head>
 <body>
-    <p>guestbook</p>
-    
-    <!-- Internal Navigation -->
-    <nav>
-
-    </nav>
+    <!-- Using the existing credits-container styling from style.css -->
+    <div class="credits-container">
+        <div class="credits-header">
+            <h2>guestbook</h2>
+        </div>
+        <div class="credits-content">
+            <!-- Atabook Guestbook Embed -->
+            <iframe 
+                src="https://ledaheavyindustry.atabook.org/" 
+                title="Leda Heavy Industry Guestbook"
+                loading="lazy"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
 </body>
 </html>
