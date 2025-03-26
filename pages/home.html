@@ -51,6 +51,31 @@
         .img7 { top: 33.3%; left: 0%; transform: rotate(0deg) scale(1); }
         .img8 { top: 72.2%; left: 50%; transform: rotate(150deg) scale(1.5); }
         .img9 { top: 44.4%; left: 25%; transform: rotate(0deg) scale(1); }
+        
+        /* Chat box styling */
+        .chat-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 20;
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .chat-header {
+            background-color: #111;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #333;
+        }
+        
+        .chat-frame {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +92,18 @@
         <img src="assets/image/stars/star_7.jpg" alt="Star 7" class="star img7">
         <img src="assets/image/stars/star_8.jpg" alt="Star 8" class="star img8">
         <img src="assets/image/stars/star_9.jpg" alt="Star 9" class="star img9">
+        
+        <!-- Chat Box Container - No JavaScript Version -->
+        <div class="chat-container">
+            <div class="chat-header">
+                Chat
+            </div>
+            <iframe src="https://www5.cbox.ws/box/?boxid=956028&boxtag=q5e5e8" 
+                    class="chat-frame" 
+                    allowtransparency="yes" 
+                    allow="autoplay" 
+                    scrolling="auto"></iframe>
+        </div>
     </div>
 </body>
 </html>

@@ -17,10 +17,15 @@
             overflow: hidden;
         }
         
+        /* Override the credits-container height only for this page */
+        .credits-container {
+            height: 85vh !important;
+        }
+        
         /* Ensure the iframe fills the container and has proper styling */
         .credits-content iframe {
             width: 100%;
-            height: 600px;
+            height: 170vh; /* Future you: Change this if you want a bigger height for your container */
             border: 1px solid #333;
             background-color: #111;
         }
@@ -32,7 +37,8 @@
         <div class="credits-header">
             <h2>guestbook</h2>
         </div>
-        <div class="credits-content">
+        <!-- Adding style="align-items: flex-start;" to keep content at top, just like in credits.html -->
+        <div class="credits-content" style="align-items: flex-start;">
             <!-- Atabook Guestbook Embed -->
             <iframe 
                 src="https://ledaheavyindustry.atabook.org/" 
