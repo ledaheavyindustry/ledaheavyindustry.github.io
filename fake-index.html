@@ -48,17 +48,36 @@
             line-height: 1.3;
         }
         
-        /* Style for my link - reduced margin-top */
+        /* Update the my-link class for proper centering and sizing */
         .my-link {
             display: flex;
-            justify-content: center;
-            margin: 2px auto 10px; /* Reduced top margin from 10px to 2px */
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            width: 90%; /* Match width of other containers */
+            margin: 2px auto 10px; /* Center the container itself */
         }
-        
+
+        /* Style for links inside my-link */
+        .my-link a {
+            display: block;
+            width: 100%; /* Take full width of container */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Image styling to match other containers */
         .my-link img {
-            max-width: 100%;
+            width: 88px; /* Match width of other button images */
             height: auto;
             border: 1px solid #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fix for any potential spaces between images */
+        .my-link a + a {
+            margin-top: -1px; /* Slightly overlap borders to avoid double border effect */
         }
         
         .my-link img:hover {
