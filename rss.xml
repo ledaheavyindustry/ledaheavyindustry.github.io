@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Leda Heavy Industry</title>
+        <description>Leda Heavy Industry RSS Feed</description>
+        <link>https://www.ledaheavyindustry.com</link>
+
+        <item>
+            <title>RSS Test 4 API</title>
+            <description>Testing RSS 3.</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>20250407test4API</guid>
+            <pubDate>Mon, 07 Apr 2025 21:53:00 +0200</pubDate>
+        </item>        
+
+        <item>
+            <title>RSS Test 3</title>
+            <description>Testing RSS 3.</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>20250407test3</guid>
+            <pubDate>Mon, 07 Apr 2025 21:44:00 +0200</pubDate>
+        </item>        
+        
+        <item>
+            <title>RSS Test 2</title>
+            <description>Testing RSS 2.</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>20250407test2</guid>
+            <pubDate>Mon, 07 Apr 2025 05:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>RSS Test 1</title>
+            <description>Testing RSS 1.</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>20250407test1</guid>
+            <pubDate>Sun, 06 Apr 2025 04:30:00 +0200</pubDate>
+        </item>
+
+    </channel>
+</rss>
