@@ -128,6 +128,15 @@
             background-color: #222;
             border-color: #666;
         }
+        
+        .ritual-confirmation {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -159,11 +168,16 @@
             
             <div class="divider"></div>
             
+            <!-- Confirmation message -->
+            <div class="ritual-confirmation">
+                Your password is your name
+            </div>
+            
             <!-- The Altar Section -->
             <div class="altar-section">
                 <div class="altar-label">The Altar</div>
                 <form class="altar-form" action="#" method="post">
-                    <input type="text" id="password" name="password" class="altar-input" placeholder="remember your relics and you'll remember your password">
+                    <input type="text" id="password" name="password" class="altar-input" placeholder="what is your password?">
                     <button type="button" class="enter-button">enter</button>
                 </form>
             </div>
@@ -171,16 +185,51 @@
     </div>
     
     <script>
-        // Add event listeners for form submission
+        // Simple decoder for the solutions (basic ROT13-like)
+        function decode(input) {
+            let result = '';
+            for (let i = 0; i < input.length; i++) {
+                let char = input.charAt(i);
+                let code = char.charCodeAt(0);
+                result += String.fromCharCode((code - 97 + 13) % 26 + 97);
+            }
+            return result;
+        }
+        
+        // The answers are still encoded but in a simpler way
+        const answers = {
+            first: decode('vgnef'),   // stars
+            second: decode('ehyrf'),  // rules
+            third: decode('unccl')    // happy
+        };
+        
+        // Check if relics contain the encoded answers
+        function validateRelics() {
+            const ritual1 = document.getElementById('ritual1').value.toLowerCase();
+            const ritual2 = document.getElementById('ritual2').value.toLowerCase();
+            const ritual3 = document.getElementById('ritual3').value.toLowerCase();
+            
+            return ritual1.includes(answers.first) && 
+                   ritual2.includes(answers.second) && 
+                   ritual3.includes(answers.third);
+        }
+        
+        // When offer button is clicked
         document.querySelector('.offer-button').addEventListener('click', function() {
-            // You can add functionality here for handling the ritual offerings
-            console.log('Relics offered');
+            if (validateRelics()) {
+                document.querySelector('.ritual-confirmation').style.display = 'block';
+                document.querySelector('.altar-section').style.display = 'block';
+            }
         });
         
+        // When enter button is clicked (ready for future implementation)
         document.querySelector('.enter-button').addEventListener('click', function() {
-            // You can add functionality here for checking the password
             console.log('Password entered');
+            // In the final version, this would redirect to heart.html
         });
+        
+        // Hide the altar section initially
+        document.querySelector('.altar-section').style.display = 'none';
     </script>
 </body>
 </html>
