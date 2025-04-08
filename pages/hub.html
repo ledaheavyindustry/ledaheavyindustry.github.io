@@ -87,46 +87,14 @@
             margin-bottom: 15px;
             font-size: 1.1rem;
             color: #ddd;
-        }
-        
-        .altar-form {
-            display: flex;
-            width: 80%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .altar-input {
             width: 100%;
-            padding: 8px 12px;
-            background-color: #111;
-            border: 1px solid #333;
-            color: white;
-            font-family: 'RetroByte', sans-serif;
-            border-radius: 4px;
-            margin-bottom: 10px;
+            text-align: center;
         }
         
-        .altar-input::placeholder {
-            color: #555;
-            opacity: 1;
-        }
-        
-        .enter-button {
-            padding: 8px 15px;
-            background-color: #000;
-            color: white;
-            border: 1px solid #444;
-            border-radius: 5px;
-            font-family: 'RetroByte', sans-serif;
-            cursor: url('assets/image/cursor_b.webp'), auto;
-            transition: background-color 0.3s;
-        }
-        
-        .enter-button:hover {
-            background-color: #222;
-            border-color: #666;
+        .altar-group {
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
         }
         
         .ritual-confirmation {
@@ -150,86 +118,102 @@
             <form class="ritual-form" action="#" method="post">
                 <div class="ritual-group">
                     <label class="ritual-label" for="ritual1">First Ritual: "The Smallest Stars Are The Wisest"</label>
-                    <input type="text" id="ritual1" name="ritual1" class="ritual-input" placeholder="offer your relic">
+                    <input type="text" id="ritual1" name="ritual1" class="ritual-input" placeholder="whisper the name of the weapon...">
                 </div>
                 
                 <div class="ritual-group">
                     <label class="ritual-label" for="ritual2">Second Ritual: "Rules Are Not Sacred"</label>
-                    <input type="text" id="ritual2" name="ritual2" class="ritual-input" placeholder="offer your relic">
+                    <input type="text" id="ritual2" name="ritual2" class="ritual-input" placeholder="describe the weapon of betrayal...">
                 </div>
                 
                 <div class="ritual-group">
                     <label class="ritual-label" for="ritual3">Third Ritual: "Happy Little Accidents"</label>
-                    <input type="text" id="ritual3" name="ritual3" class="ritual-input" placeholder="offer your relic">
+                    <input type="text" id="ritual3" name="ritual3" class="ritual-input" placeholder="speak of the virtue and its material...">
                 </div>
                 
-                <button type="button" class="offer-button">offer your relics</button>
+                <button type="button" id="offer-button" class="offer-button">offer your relics</button>
             </form>
             
             <div class="divider"></div>
             
             <!-- Confirmation message -->
-            <div class="ritual-confirmation">
+            <div id="ritual-confirmation" class="ritual-confirmation">
                 Your password is your name
             </div>
             
             <!-- The Altar Section -->
-            <div class="altar-section">
+            <div class="altar-section" id="altar-section" style="display: none;">
                 <div class="altar-label">The Altar</div>
-                <form class="altar-form" action="#" method="post">
-                    <input type="text" id="password" name="password" class="altar-input" placeholder="what is your password?">
-                    <button type="button" class="enter-button">enter</button>
-                </form>
+                
+                <!-- Exactly match the structure of the ritual groups -->
+                <div class="ritual-group">
+                    <input type="text" id="password" name="password" class="ritual-input" placeholder="what is your password?">
+                </div>
+                
+                <button type="button" id="enter-button" class="offer-button">enter</button>
             </div>
         </div>
     </div>
     
     <script>
-        // Simple decoder for the solutions (basic ROT13-like)
-        function decode(input) {
-            let result = '';
-            for (let i = 0; i < input.length; i++) {
-                let char = input.charAt(i);
-                let code = char.charCodeAt(0);
-                result += String.fromCharCode((code - 97 + 13) % 26 + 97);
-            }
-            return result;
-        }
+        // Direct access to DOM elements
+        const ritual1Input = document.getElementById('ritual1');
+        const ritual2Input = document.getElementById('ritual2');
+        const ritual3Input = document.getElementById('ritual3');
+        const offerButton = document.getElementById('offer-button');
+        const confirmationMessage = document.getElementById('ritual-confirmation');
+        const altarSection = document.getElementById('altar-section');
+        const enterButton = document.getElementById('enter-button');
         
-        // The answers are still encoded but in a simpler way
-        const answers = {
-            first: decode('vgnef'),   // stars
-            second: decode('ehyrf'),  // rules
-            third: decode('unccl')    // happy
-        };
-        
-        // Check if relics contain the encoded answers
-        function validateRelics() {
-            const ritual1 = document.getElementById('ritual1').value.toLowerCase();
-            const ritual2 = document.getElementById('ritual2').value.toLowerCase();
-            const ritual3 = document.getElementById('ritual3').value.toLowerCase();
+        function getAnswer(index) {
+            const secretKeys = [
+                [105, 110, 100, 105, 97, 110, 32, 115, 97, 98, 114, 101],
+                [116, 114, 101, 97, 99, 104, 101, 114, 111, 117, 115, 32, 107, 110, 105, 102, 101],
+                [112, 97, 116, 105, 101, 110, 99, 101, 32, 111, 102, 32, 115, 105, 108, 107]
+            ];
             
-            return ritual1.includes(answers.first) && 
-                   ritual2.includes(answers.second) && 
-                   ritual3.includes(answers.third);
+            return secretKeys[index].map(code => String.fromCharCode(code)).join('');
         }
         
-        // When offer button is clicked
-        document.querySelector('.offer-button').addEventListener('click', function() {
-            if (validateRelics()) {
-                document.querySelector('.ritual-confirmation').style.display = 'block';
-                document.querySelector('.altar-section').style.display = 'block';
+        // Simple validation function that compares inputs to the expected answers
+        function checkRelics() {
+            const val1 = ritual1Input.value.toLowerCase().trim();
+            const val2 = ritual2Input.value.toLowerCase().trim();
+            const val3 = ritual3Input.value.toLowerCase().trim();
+            
+            const answer1 = getAnswer(0);
+            const answer2 = getAnswer(1);
+            const answer3 = getAnswer(2);
+            
+            console.log('Input 1:', val1, 'Match:', val1 === answer1);
+            console.log('Input 2:', val2, 'Match:', val2 === answer2);
+            console.log('Input 3:', val3, 'Match:', val3 === answer3);
+            
+            // Return true only if all three match
+            return val1 === answer1 && val2 === answer2 && val3 === answer3;
+        }
+        
+        // Add click event for the offer button
+        offerButton.addEventListener('click', function() {
+            if (checkRelics()) {
+                confirmationMessage.style.display = 'block';
+                altarSection.style.display = 'block';
+            } else {
+                console.log("Validation failed - check your answers");
             }
         });
         
-        // When enter button is clicked (ready for future implementation)
-        document.querySelector('.enter-button').addEventListener('click', function() {
-            console.log('Password entered');
-            // In the final version, this would redirect to heart.html
+        // Add click event for the enter button
+        enterButton.addEventListener('click', function() {
+            if (confirmationMessage.style.display === 'block') {
+                // Obfuscate the redirect path by building it dynamically
+                const pathParts = [
+                    'as', 'se', 'ts', '/', 'co', 'nt', 'en', 't', '/',
+                    'al', 'bu', 'ms', '/', 'he', 'ar', 't.', 'ht', 'ml'
+                ];
+                window.parent.location.href = pathParts.join('');
+            }
         });
-        
-        // Hide the altar section initially
-        document.querySelector('.altar-section').style.display = 'none';
     </script>
 </body>
 </html>
