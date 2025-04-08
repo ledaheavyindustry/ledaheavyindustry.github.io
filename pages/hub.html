@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>do you remember your password ?</title>
+    <title>Sanctum of Offering</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* These styles ensure the page content fits properly in the iframe */
@@ -16,9 +16,171 @@
             align-items: center;
             overflow: hidden;
         }
+        
+        /* Styles for form elements */
+        .ritual-form {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        
+        .ritual-group {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .ritual-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #ddd;
+            text-align: center;
+        }
+        
+        .ritual-input {
+            width: 80%;
+            padding: 8px 12px;
+            background-color: #111;
+            border: 1px solid #333;
+            color: white;
+            font-family: 'RetroByte', sans-serif;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .ritual-input::placeholder {
+            color: #555;
+            opacity: 1;
+        }
+        
+        .offer-button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-family: 'RetroByte', sans-serif;
+            cursor: url('assets/image/cursor_b.webp'), auto;
+            transition: background-color 0.3s;
+        }
+        
+        .offer-button:hover {
+            background-color: #222;
+            border-color: #666;
+        }
+        
+        .divider {
+            width: 70%;
+            margin: 30px auto;
+            border-top: 1px solid #333;
+        }
+        
+        .altar-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .altar-label {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        
+        .altar-form {
+            display: flex;
+            width: 80%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .altar-input {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: #111;
+            border: 1px solid #333;
+            color: white;
+            font-family: 'RetroByte', sans-serif;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .altar-input::placeholder {
+            color: #555;
+            opacity: 1;
+        }
+        
+        .enter-button {
+            padding: 8px 15px;
+            background-color: #000;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-family: 'RetroByte', sans-serif;
+            cursor: url('assets/image/cursor_b.webp'), auto;
+            transition: background-color 0.3s;
+        }
+        
+        .enter-button:hover {
+            background-color: #222;
+            border-color: #666;
+        }
     </style>
 </head>
 <body>
-
+    <div class="poems-container">
+        <div class="poems-header">
+            <h2>Sanctum of Offering</h2>
+        </div>
+        
+        <div class="poems-content">
+            <!-- Rituals Form -->
+            <form class="ritual-form" action="#" method="post">
+                <div class="ritual-group">
+                    <label class="ritual-label" for="ritual1">First Ritual: "The Smallest Stars Are The Wisest"</label>
+                    <input type="text" id="ritual1" name="ritual1" class="ritual-input" placeholder="offer your relic">
+                </div>
+                
+                <div class="ritual-group">
+                    <label class="ritual-label" for="ritual2">Second Ritual: "Rules Are Not Sacred"</label>
+                    <input type="text" id="ritual2" name="ritual2" class="ritual-input" placeholder="offer your relic">
+                </div>
+                
+                <div class="ritual-group">
+                    <label class="ritual-label" for="ritual3">Third Ritual: "Happy Little Accidents"</label>
+                    <input type="text" id="ritual3" name="ritual3" class="ritual-input" placeholder="offer your relic">
+                </div>
+                
+                <button type="button" class="offer-button">offer your relics</button>
+            </form>
+            
+            <div class="divider"></div>
+            
+            <!-- The Altar Section -->
+            <div class="altar-section">
+                <div class="altar-label">The Altar</div>
+                <form class="altar-form" action="#" method="post">
+                    <input type="text" id="password" name="password" class="altar-input" placeholder="remember your relics and you'll remember your password">
+                    <button type="button" class="enter-button">enter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add event listeners for form submission
+        document.querySelector('.offer-button').addEventListener('click', function() {
+            // You can add functionality here for handling the ritual offerings
+            console.log('Relics offered');
+        });
+        
+        document.querySelector('.enter-button').addEventListener('click', function() {
+            // You can add functionality here for checking the password
+            console.log('Password entered');
+        });
+    </script>
 </body>
 </html>
