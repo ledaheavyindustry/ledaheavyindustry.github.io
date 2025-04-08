@@ -16,6 +16,46 @@
             align-items: center;
             overflow: hidden;
         }
+        
+        /* Style for the yes/no buttons */
+        .decision-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .decision-button {
+            padding: 10px 20px;
+            font-size: 15px;
+            color: white;
+            background-color: black;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'RetroByte', sans-serif;
+            transition: background-color 0.3s;
+        }
+        
+        .decision-button:hover {
+            background-color: #444;
+            cursor: url('assets/image/cursor_b.webp'), auto;
+        }
+        
+        /* Adjust the credits image container to accommodate buttons */
+        .credits-content {
+            flex-direction: column;
+            align-items: center !important;
+        }
+        
+        /* Make the image container full width */
+        .credits-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -24,10 +64,17 @@
         <div class="credits-header">
             <h2>terms and services</h2>
         </div>
-        <!-- Top-aligned Image with container -->
-        <div class="credits-content" style="align-items: flex-start;">
+        
+        <!-- Content area with image and buttons -->
+        <div class="credits-content">
             <div class="credits-image">
                 <img src="assets/image/credits.png" alt="Credits Image">
+            </div>
+            
+            <!-- Yes/No buttons -->
+            <div class="decision-buttons">
+                <button class="decision-button" onclick="window.location.href='home.html'">accept</button>
+                <button class="decision-button" onclick="window.parent.location.href='../rule.html'">decline</button>
             </div>
         </div>
     </div>
