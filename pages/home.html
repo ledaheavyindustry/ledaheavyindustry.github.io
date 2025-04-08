@@ -100,6 +100,17 @@
             margin-bottom: 8px;
             color: white;
         }
+        
+        /* Custom cursor for clickable elements */
+        .custom-cursor {
+            cursor: url('assets/image/cursor_b.webp'), auto !important;
+        }
+        
+        /* Remove default anchor styling */
+        a.custom-cursor {
+            display: inline-block;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -117,7 +128,7 @@
         <img src="assets/image/stars/star_2.jpg" alt="Star 2" class="star img2">
         <img src="assets/image/stars/star_3.jpg" alt="Star 3" class="star img3">
         <img src="assets/image/stars/star_4.jpg" alt="Star 4" class="star img4">
-        <img src="assets/image/stars/star_5.jpg" alt="Star 5" class="star img5">
+        <a href="../star.html" target="_parent" class="custom-cursor"><img src="assets/image/stars/star_5.jpg" alt="Star 5" class="star img5"></a>
         <img src="assets/image/stars/star_6.jpg" alt="Star 6" class="star img6">
         <img src="assets/image/stars/star_7.jpg" alt="Star 7" class="star img7">
         <img src="assets/image/stars/star_8.jpg" alt="Star 8" class="star img8">
