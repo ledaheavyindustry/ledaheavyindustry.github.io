@@ -6,6 +6,14 @@
         <link>https://www.ledaheavyindustry.com</link>
 
         <item>
+            <title>Puzzle Hints</title>
+            <description>Added some puzzle hints and changed the nekoweb thumbnail</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>azdazd8910fze456653e088zvv</guid>
+            <pubDate>Mon, 13 Apr 2025 21:00:00 +0200</pubDate>
+        </item>   
+
+        <item>
             <title>Fixing the nekoweb API process</title>
             <description>Some additional fixes, this API is giving me headaches</description>
             <link>https://www.ledaheavyindustry.com</link>
