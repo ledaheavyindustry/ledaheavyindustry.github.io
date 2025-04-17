@@ -788,3 +788,36 @@ body {
 .poem-entry:last-child {
     margin-bottom: 20px;
 }
+
+/* ==================== */
+/* AUDIO VOLUME CONTROL */
+/* ==================== */
+
+/* Volume control styling */
+.volume-control {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.volume-icon {
+    color: white;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.volume-slider {
+    width: 80px;
+    height: 3px;
+    background: #444;
+    outline: none;
+    border: none;
+    accent-color: white; /* This changes the thumb color */
+}
