@@ -6,11 +6,19 @@
         <link>https://www.ledaheavyindustry.com</link>
 
         <item>
+            <title>New film photos and some adjusments</title>
+            <description>Added some new photography and made some small adjusments to the home page. I did remove some old photos that weren't that special to leave some room for the new ones. Also realized my RSS dates were a bit bugged out haha</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>azdazd8910f899sd5f4z0a6az88zvv</guid>
+            <pubDate>Sat, 19 Apr 2025 14:09:00 +0200</pubDate>
+        </item>   
+
+        <item>
             <title>Audio slider and adjusments</title>
             <description>I added a volume slider because of popular request ! I also adjusted some favorite albums and added a new poem </description>
             <link>https://www.ledaheavyindustry.com</link>
             <guid>azdazd8910f899sd5f0088zvv</guid>
-            <pubDate>Mon, 17 Apr 2025 19:46:00 +0200</pubDate>
+            <pubDate>Thu, 17 Apr 2025 19:46:00 +0200</pubDate>
         </item>   
 
         <item>
@@ -26,7 +34,7 @@
             <description>Added some puzzle hints and changed the nekoweb thumbnail</description>
             <link>https://www.ledaheavyindustry.com</link>
             <guid>azdazd8910fze456653e088zvv</guid>
-            <pubDate>Mon, 13 Apr 2025 21:00:00 +0200</pubDate>
+            <pubDate>Sun, 13 Apr 2025 21:00:00 +0200</pubDate>
         </item>   
 
         <item>
@@ -34,7 +42,7 @@
             <description>Some additional fixes, this API is giving me headaches</description>
             <link>https://www.ledaheavyindustry.com</link>
             <guid>azdazd89109aze088zvv</guid>
-            <pubDate>Mon, 11 Apr 2025 00:47:00 +0200</pubDate>
+            <pubDate>Fri, 11 Apr 2025 00:47:00 +0200</pubDate>
         </item>   
 
         <item>
@@ -42,7 +50,7 @@
             <description>Fixing some typos</description>
             <link>https://www.ledaheavyindustry.com</link>
             <guid>efzezf491dgzefazda2azd108r4eazrd</guid>
-            <pubDate>Mon, 10 Apr 2025 20:56:00 +0200</pubDate>
+            <pubDate>Thu, 10 Apr 2025 20:56:00 +0200</pubDate>
         </item>   
 
         <item>
@@ -50,7 +58,7 @@
             <description>I completely implemented the main puzzle. Hope you enjoy solving it !</description>
             <link>https://www.ledaheavyindustry.com</link>
             <guid>efzezf491dazda2azd108r4eazrd</guid>
-            <pubDate>Mon, 08 Apr 2025 21:16:00 +0200</pubDate>
+            <pubDate>Tue, 08 Apr 2025 21:16:00 +0200</pubDate>
         </item>   
 
         <item>
