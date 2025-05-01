@@ -5,7 +5,6 @@
     <title>Sanctum of Offering</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* These styles ensure the page content fits properly in the iframe */
         html, body {
             margin: 0;
             padding: 0;
@@ -17,7 +16,6 @@
             overflow: hidden;
         }
         
-        /* Styles for form elements */
         .ritual-form {
             width: 100%;
             margin-bottom: 25px;
@@ -114,7 +112,6 @@
         </div>
         
         <div class="poems-content">
-            <!-- Rituals Form -->
             <form class="ritual-form" action="#" method="post">
                 <div class="ritual-group">
                     <label class="ritual-label" for="ritual1">First Ritual: "The Smallest Moon Is The Wisest"</label>
@@ -136,16 +133,13 @@
             
             <div class="divider"></div>
             
-            <!-- Confirmation message -->
             <div id="ritual-confirmation" class="ritual-confirmation">
                 Your password is your name
             </div>
             
-            <!-- The Altar Section -->
             <div class="altar-section" id="altar-section" style="display: none;">
                 <div class="altar-label">The Altar</div>
                 
-                <!-- Exactly match the structure of the ritual groups -->
                 <div class="ritual-group">
                     <input type="text" id="password" name="password" class="ritual-input" placeholder="what is your password?">
                 </div>
@@ -156,7 +150,6 @@
     </div>
     
     <script>
-        // Direct access to DOM elements
         const ritual1Input = document.getElementById('ritual1');
         const ritual2Input = document.getElementById('ritual2');
         const ritual3Input = document.getElementById('ritual3');
@@ -166,16 +159,15 @@
         const enterButton = document.getElementById('enter-button');
         
         function getAnswer(index) {
-            const secretKeys = [
+            const sarout = [
                 [105, 110, 100, 105, 97, 110, 32, 115, 97, 98, 114, 101],
                 [116, 114, 101, 97, 99, 104, 101, 114, 111, 117, 115, 32, 107, 110, 105, 102, 101],
                 [112, 97, 116, 105, 101, 110, 99, 101, 32, 111, 102, 32, 115, 105, 108, 107]
             ];
             
-            return secretKeys[index].map(code => String.fromCharCode(code)).join('');
+            return sarout[index].map(code => String.fromCharCode(code)).join('');
         }
         
-        // Simple validation function that compares inputs to the expected answers
         function checkRelics() {
             const val1 = ritual1Input.value.toLowerCase().trim();
             const val2 = ritual2Input.value.toLowerCase().trim();
@@ -189,11 +181,9 @@
             console.log('Input 2:', val2, 'Match:', val2 === answer2);
             console.log('Input 3:', val3, 'Match:', val3 === answer3);
             
-            // Return true only if all three match
             return val1 === answer1 && val2 === answer2 && val3 === answer3;
         }
         
-        // Add click event for the offer button
         offerButton.addEventListener('click', function() {
             if (checkRelics()) {
                 confirmationMessage.style.display = 'block';
@@ -203,10 +193,8 @@
             }
         });
         
-        // Add click event for the enter button
         enterButton.addEventListener('click', function() {
             if (confirmationMessage.style.display === 'block') {
-                // Obfuscate the redirect path by building it dynamically
                 const pathParts = [
                     'as', 'se', 'ts', '/', 'co', 'nt', 'en', 't', '/',
                     'al', 'bu', 'ms', '/', 'he', 'ar', 't.', 'ht', 'ml'
