@@ -4,7 +4,15 @@
         <title>Leda Heavy Industry</title>
         <description>Leda Heavy Industry RSS Feed</description>
         <link>https://www.ledaheavyindustry.com</link>
-        
+
+        <item>
+            <title>New thoughts everywhere</title>
+            <description>Added a current thoughts container on my home page + a journal update on my new 7 string guitar</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>azdazd884dz89d88zvv</guid>
+            <pubDate>Thu, 08 May 2025 21:45:00 +0200</pubDate>
+        </item>  
+
         <item>
             <title>my thoughts are drowning on the horizon</title>
             <description>some thoughts on my dream journal</description>

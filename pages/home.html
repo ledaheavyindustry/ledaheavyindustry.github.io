@@ -100,6 +100,31 @@
             margin-bottom: 8px;
             color: white;
         }
+
+        /* current thoughts */
+        .current-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 210px;
+            z-index: 20;
+            border: 1px solid #333;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            color: #ddd;
+            font-size: 1rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        .current-header {
+            font-size: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+            color: white;
+        }
         
         /* Custom cursor for clickable elements */
         .custom-cursor {
@@ -119,8 +144,14 @@
         
         <!-- Welcome Message Container -->
         <div class="welcome-container">
-            <div class="welcome-header">don't google HP Lovecraft's cat name !!</div>
+            <div class="welcome-header">hi :)</div>
             <p>i don't have an about-me page but you can discover everything from all the things i've put in the craft and soul :') so feel free to look around, reach out if you feel like it, or just leave some words on my guestbook :)</p>
+        </div>
+
+        <!-- Current Thoughts Container -->
+        <div class="current-container">
+            <div class="current-header">what's on my mind right now</div>
+            <a href="https://mirar.bandcamp.com/track/pr-sage" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: underline;">Mirar - Presage , 0:40</a>
         </div>
         
         <!-- Stars with fixed positions using percentages -->
@@ -147,7 +178,7 @@
         </div>
         <div class="volume-control">
             <span class="volume-icon">VOL</span>
-            <input type="range" min="0" max="1" step="0.1" value="0.5" class="volume-slider" id="volume-slider">
+            <input type="range" min="0" max="1" step="0.1" value="0.6" class="volume-slider" id="volume-slider">
         </div>
     </div>
     <script>
