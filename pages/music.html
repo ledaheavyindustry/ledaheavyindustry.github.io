@@ -71,12 +71,38 @@
         </div>
     </div>
 
-    <script> //Adding the volume slider as an exception in the music page
-        document.getElementById('volume-slider').addEventListener('input', function() {
-            const audio = parent.document.getElementById('background-audio');
-            if (audio) {
-                audio.volume = this.value;
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backgroundAudio = parent.document.getElementById('background-audio');
+
+            // --- Existing Volume Slider Logic --- This small piece of code is independant from the rest sort of
+            const volumeSlider = document.getElementById('volume-slider');
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', function() {
+                    if (backgroundAudio) {
+                        backgroundAudio.volume = this.value;
+                    }
+                });
             }
+
+            // --- New Media Pause/Resume Logic ---
+            function pauseBackgroundMusic() {
+                if (backgroundAudio) {
+                    backgroundAudio.pause();
+                }
+            }
+
+            function resumeBackgroundMusic() {
+                if (backgroundAudio) {
+                    backgroundAudio.play();
+                }
+            }
+
+            const allMediaPlayers = document.querySelectorAll('video, audio');
+            allMediaPlayers.forEach(function(player) {
+                player.addEventListener('play', pauseBackgroundMusic);
+                player.addEventListener('pause', resumeBackgroundMusic);
+            });
         });
     </script>
 </body>
