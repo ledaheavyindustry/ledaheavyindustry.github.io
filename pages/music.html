@@ -23,21 +23,43 @@
         <div class="catalog-header">
             <h2>music</h2>
         </div>
-        
-        <div class="catalog-item catalog-item-full has-video">
-            <div class="catalog-item-video">
-                <video controls poster="assets/content/music/den_spanska_thumbnail.png">
-                    <source src="assets/content/music/den_spanska.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+
+        <div class="volume-control"> <!--Adding the volume slider as an exception in the music page-->
+            <span class="volume-icon">VOL</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.5" class="volume-slider" id="volume-slider"> <!-- Can set volume to 50%. Don't forget to change the real actual value in the fake-index page as well -->
+        </div>
+
+        <!-- NEW CONTENT GOES HERE -->
+
+        <div class="titled-content-block">
+            <h3 class="content-title">-> 14/07/2025: A demo intro for a Black Metal project</h3>
+            <div class="mp3-container">
+                <audio controls>
+                    <!-- Replace with your MP3 file path -->
+                    <source src="assets/content/music/666kvlt_gate_of_the_rutracker_forest.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
-            <div class="video-details">
-                <h3 class="video-title">+ den spanska känslan + cover</h3>
-                <p class="video-description">thall</p>
+        </div>
+
+        <div class="titled-content-block">
+            <h3 class="content-title">-> an old cover, thall:</h3>
+            <div class="catalog-item" style="padding: 20px; text-align: center;">
+            <div class="catalog-item catalog-item-full has-video">
+                <div class="catalog-item-video">
+                    <video controls poster="assets/content/music/den_spanska_thumbnail.png">
+                        <source src="assets/content/music/den_spanska.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-details">
+                    <h3 class="video-title">+ den spanska känslan + cover</h3>
+                    <p class="video-description">thall</p>
+                </div>
             </div>
         </div>
         
-        <!-- Text container similar to poems/thoughts containers -->
+    
         <div style="margin-top: 30px; background-color: #111; border: 1px solid #333; padding: 20px; text-align: center;">
             <h3 style="margin-bottom: 15px; font-size: 1.4rem; border-bottom: 1px solid #444; padding-bottom: 10px;">Small Things Coming Soon ! Majorly Small Things in the Works ! Unexciting Things Coming Your Way ! I CAN WAIT TO SHOW YOU AAAHAAAAAAAAAAAH</h3>
             <p style="line-height: 1.6; color: #ddd; font-size: 0.95rem; margin-bottom: 15px;">
@@ -48,5 +70,14 @@
             </p>
         </div>
     </div>
+
+    <script> //Adding the volume slider as an exception in the music page
+        document.getElementById('volume-slider').addEventListener('input', function() {
+            const audio = parent.document.getElementById('background-audio');
+            if (audio) {
+                audio.volume = this.value;
+            }
+        });
+    </script>
 </body>
 </html>

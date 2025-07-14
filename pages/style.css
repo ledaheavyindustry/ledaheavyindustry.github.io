@@ -663,6 +663,39 @@ body {
 }
 
 /* ==================== */
+/* TITLED CONTENT BLOCK */
+/* ==================== */
+
+.titled-content-block {
+    margin-bottom: 20px;
+}
+
+.titled-content-block .content-title {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+/* ==================== */
+/* MP3 PLAYER CONTAINER */
+/* ==================== */
+
+.mp3-container {
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 15px;
+}
+
+.mp3-container audio {
+    width: 100%;
+    display: block;
+    color-scheme: dark;
+}
+
+/* ==================== */
 /* THOUGHTS STYLES      */
 /* ==================== */
 
