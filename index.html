@@ -40,6 +40,7 @@
 
         /* Styling for buttons */
         .decision-button {
+            display: inline-block; /* Makes <a> tags behave like buttons */
             padding: 10px 20px;
             font-size: 15px;
             color: white;
@@ -49,6 +50,7 @@
             cursor: pointer;
             margin: 10px;
             font-family: 'RetroByte', sans-serif; /* Ensures font is applied */
+            text-decoration: none; /* Removes underline from links */
         }
 
         .decision-button:hover {
@@ -63,20 +65,9 @@
         <img src="pages/assets/image/pre_banner.jpg" alt="Pre Banner" class="pre-banner">
         <!-- Proceed Text -->
         <div class="proceed-text">proceed?</div>
-        <!-- Yes and No Buttons -->
-        <button class="decision-button" onclick="startAudioAndRedirect()">yes</button>
-        <button class="decision-button" onclick="window.location.href='the-end.html'">no</button>
-        <!-- Hidden Audio -->
-        <audio id="background-audio" src="pages/assets/audio/purple.mp3"></audio>
+        <!-- Yes and No Buttons using Links -->
+        <a href="fake-index.html" class="decision-button">yes</a>
+        <a href="the-end.html" class="decision-button">no</a>
     </div>
-    <script>
-        function startAudioAndRedirect() {
-          //  const audio = document.getElementById('background-audio'); // This is here in case audio starts bugging out but I don't think it should
-          //  audio.play();
-            setTimeout(() => {
-                window.location.href = 'fake-index.html';
-            }, 300);
-        }
-    </script>
 </body>
 </html>
