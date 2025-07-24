@@ -16,6 +16,90 @@
             align-items: center;
             overflow: hidden;
         }
+
+        /* MOVED STYLES FOR BUTTONS */
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            width: 100%;
+            margin: 10px auto;
+        }
+        
+        .buttons-container a, .buttons-container img {
+            display: block;
+            width: 88px;
+            height: 31px;
+        }
+        
+        .buttons-container a {
+            padding: 0;
+            margin: 2px;
+            border: none;
+            background-color: transparent;
+        }
+        
+        .buttons-container img {
+            border: 1px solid #444;
+        }
+        
+        .buttons-container img:hover {
+            border-color: white;
+        }
+        
+        .buttons-header {
+            width: 100%;
+            margin: 25px auto 5px;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #ddd;
+            padding: 0 5px;
+            line-height: 1.3;
+        }
+
+        /* MOVED STYLES FOR MY LINK */
+        .my-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 2px auto 10px;
+        }
+        .my-link a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .my-link img {
+            width: 88px;
+            height: auto;
+            border: 1px solid #444;
+            margin: 0;
+            padding: 0;
+        }
+        .my-link a + a {
+            margin-top: -1px;
+        }
+        .my-link img:hover {
+            border-color: white;
+        }
+        .first-header {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        /* NEW STYLE FOR SEPARATOR LINE */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #333; /* Dark gray line */
+            margin: 30px auto; /* Space above and below */
+            width: 80%; /* Not full width */
+        }
+
     </style>
 </head>
 <body>
@@ -27,8 +111,25 @@
         <!-- Top-aligned content -->
         <div class="credits-content" style="align-items: flex-start;">
             <div style="width: 100%; padding: 20px; text-align: center;">
-                <p style="margin-bottom: 20px; font-size: 1.2rem;">You can write to me here if you want:</p>
-                <div style="display: flex; gap: 15px; justify-content: center;">
+
+                <!-- BLOCK 1: MY LINK -->
+                <div class="buttons-header first-header">
+                    here is my link! (+ small sis)
+                </div>
+                <div class="my-link">
+                    <a href="https://www.ledaheavyindustry.com" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/link_me_animated.gif" alt="Leda Heavy Industry">
+                    </a>
+                    <a href="https://nohaidea.straw.page/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/nohaida.gif" alt="sis">
+                    </a>
+                </div>
+
+                <hr>
+
+                <!-- BLOCK 2: WRITE TO ME -->
+                <div class="buttons-header">You can write to me here if you want:</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 10px;">
                     <div>
                         <a href="https://www.instagram.com/leda.heavyindustry/" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: underline;">instagram</a>
                     </div>
@@ -45,6 +146,46 @@
                         <a href="https://www.ledaheavyindustry.com/mone.html" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: underline;">donate xmr</a>
                     </div>
                 </div>
+
+                <hr>
+
+                <!-- BLOCK 3: COOL WEBSITES -->
+                <div class="buttons-header">
+                     cool websites:
+                </div>
+                <div class="buttons-container">
+                    <a href="https://grossgirl94.neocities.org/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/grossgirl94%20button%20transparent.gif" alt="gross-girl">
+                    </a>
+                    <a href="https://buryevil.neocities.org/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/fretnoizebutton.png" alt="buryevil">
+                    </a>
+                    <a href="https://ason-asun.neocities.org//" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/asasbuttongif.gif" alt="a son">
+                    </a>
+                    <a href="https://roselilyqueen.nekoweb.org/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/but32.gif" alt="mikugaze_enjoyer">
+                    </a>
+                    <a href="https://nondmo.online/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/sleeptoken.png" alt="sleeptoken_enjoyer">
+                    </a>
+                    <a href="https://altrspace.nekoweb.org/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/altrspace-sticker-88x31.gif" alt="altr">
+                    </a>
+                </div>
+    
+                <hr>
+
+                <!-- BLOCK 4: WEBRINGS -->
+               <div class="buttons-header">
+                    webrings:
+               </div>
+               <div class="buttons-container">
+                    <div style="width:104px">
+                        <a href="//mr.jhorn.net/index.php"><img src="//mr.jhorn.net/assets/button.gif" style="width: 104px; height: auto;"></a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
