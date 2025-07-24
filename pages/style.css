@@ -120,7 +120,7 @@ h1 {
 iframe {
     border: none;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
 }
 
 /* Hidden Audio */
@@ -327,7 +327,7 @@ body {
 /* Catalog Container Styles */
 .catalog {
     width: 800px;
-    height: 80vh;
+    height: 90vh;
     margin: 0 auto;
     background-color: #000;
     border: 1px solid #333;
