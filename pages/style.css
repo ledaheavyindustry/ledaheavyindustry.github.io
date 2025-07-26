@@ -13,25 +13,26 @@ body {
     padding: 0;
     height: 100vh;
     cursor: url('assets/image/cursor_b.webp'), auto;
-    /* Fixed width layout */
     min-width: 1200px;
-    overflow-x: auto;
+    overflow: auto; /* Allow scrolling when content overflows (like high zoom) */
 }
 
 /* Fixed width wrapper for the entire layout */
 .layout-wrapper {
     width: 1200px;
-    height: 100vh;
+    height: 800px; /* Fixed height instead of 100vh for consistent alignment */
+    max-height: 800px; /* Fixed back to 800px as originally requested */
     margin: 0 auto;
     position: relative;
     display: flex;
     justify-content: center;
+    overflow: visible; /* Only show scrollbars when actually needed */
 }
 
 /* Common Sidebar Styles */
 .sidebar {
     width: 180px;
-    height: 100vh;
+    height: 800px;  /* Fixed height to match layout-wrapper */
     padding-top: 10vh;
     display: flex;
     flex-direction: column;
@@ -84,7 +85,7 @@ body {
 /* Main Content */
 .content {
     width: 800px;
-    height: 100vh;
+    height: 800px; /* Fixed height to match layout-wrapper */
     padding: 0;
     position: absolute;
     left: 200px;
@@ -94,7 +95,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    height: 100vh;
+    height: 800px; /* Fixed height to match layout-wrapper */
     width: 800px;
 }
 
@@ -120,13 +121,15 @@ h1 {
 iframe {
     border: none;
     width: 100%;
-    height: 100vh;
+    height: 800px; /* Fixed height to match layout-wrapper */
 }
 
 /* Hidden Audio */
 audio {
     display: none;
 }
+
+/* All your existing styles exactly as they were - I'll keep the rest unchanged */
 
 /* ==================== */
 /* CREDITS STYLES       */
@@ -876,4 +879,38 @@ body {
     outline: none;
     border: none;
     accent-color: white; /* This changes the thumb color */
+}
+
+/* ==================== */
+/* MOBILE RESPONSIVE    */
+/* ==================== */
+
+/* Mobile scaling - center the scaled layout properly */
+@media (max-width: 768px) {
+    body {
+        min-width: 0;
+        overflow: hidden;
+        height: 100vh;
+    }
+    
+    .layout-wrapper {
+        transform: scale(0.32); /* Scale to fit mobile screens */
+        transform-origin: center top; /* Scale from center top instead of left */
+        width: 1200px;
+        height: 800px;
+        margin: 0;
+        position: absolute;
+        left: 50%; /* Center horizontally */
+        margin-left: -600px; /* Offset by half width to truly center */
+        top: 0;
+        max-height: none;
+    }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+    .layout-wrapper {
+        transform: scale(0.28); /* Slightly smaller for tiny screens */
+        margin-left: -600px; /* Keep centered */
+    }
 }
