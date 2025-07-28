@@ -27,6 +27,7 @@
         }
         
         .decision-button {
+            display: inline-block;
             padding: 10px 20px;
             font-size: 15px;
             color: white;
@@ -36,6 +37,8 @@
             cursor: pointer;
             font-family: 'RetroByte', sans-serif;
             transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
         }
         
         .decision-button:hover {
@@ -73,8 +76,8 @@
             
             <!-- Yes/No buttons -->
             <div class="decision-buttons">
-                <button class="decision-button" onclick="window.location.href='home.html'">accept</button>
-                <button class="decision-button" onclick="window.parent.location.href='../rule.html'">decline</button>
+                <a href="home.html" class="decision-button" target="_parent">accept</a>
+                <a href="../rule.html" class="decision-button" target="_parent">decline</a>
             </div>
         </div>
     </div>
