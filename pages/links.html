@@ -100,6 +100,40 @@
             width: 80%; /* Not full width */
         }
 
+        /* TOOLTIP STYLES FOR COOL WEBSITES */
+        .buttons-container a {
+            position: relative;
+        }
+        
+        .buttons-container a[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            width: 160px;
+            text-align: center;
+            line-height: 1.3;
+            z-index: 1000;
+            border: 1px solid #444;
+        }
+        
+        .buttons-container a[data-tooltip]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
     </style>
 </head>
 <body>
@@ -161,25 +195,25 @@
                      cool websites:
                 </div>
                 <div class="buttons-container">
-                    <a href="https://grossgirl94.neocities.org/" target="_blank">
+                    <a href="https://grossgirl94.neocities.org/" target="_blank" data-tooltip="one of the first websites I discovered on neocities and the alt vibe is cool. I also love the tape collection">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/grossgirl94%20button%20transparent.gif" alt="gross-girl">
                     </a>
-                    <a href="https://buryevil.neocities.org/" target="_blank">
+                    <a href="https://buryevil.neocities.org/" target="_blank" data-tooltip="you'll probably loose your mind on how they did their website but wait til you see their art">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/fretnoizebutton.png" alt="buryevil">
                     </a>
-                    <a href="https://ason-asun.neocities.org//" target="_blank">
+                    <a href="https://ason-asun.neocities.org//" target="_blank" data-tooltip="a beautiful design. this is where I got my inspiration for the soul">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/asasbuttongif.gif" alt="a son">
                     </a>
-                    <a href="https://roselilyqueen.nekoweb.org/" target="_blank">
+                    <a href="https://roselilyqueen.nekoweb.org/" target="_blank" data-tooltip="drown yourself in a shoegaze wall of sound and in its countless cool demos">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/but32.gif" alt="mikugaze_enjoyer">
                     </a>
-                    <a href="https://nondmo.online/" target="_blank">
+                    <a href="https://nondmo.online/" target="_blank" data-tooltip="the best ui/ux i've ever seen on the indieweb.">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/sleeptoken.png" alt="sleeptoken_enjoyer">
                     </a>
-                    <a href="https://altrspace.nekoweb.org/" target="_blank">
+                    <a href="https://altrspace.nekoweb.org/" target="_blank" data-tooltip="you'll have fun here since the person is funny ash !!!">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/altrspace-sticker-88x31.gif" alt="altr">
                     </a>
-                    <a href="https://amivicky.neocities.org/" target="_blank">
+                    <a href="https://amivicky.neocities.org/" target="_blank" data-tooltip="an indieweb representation of Emanon. I loved just strolling around the website and reading bits of the blogs">
                         <img src="https://raw.githubusercontent.com/ledaheavyindustry/ledaheavyindustry.github.io/refs/heads/main/pages/assets/links/emanon.gif" alt="emanon">
                     </a>
                 </div>
