@@ -103,6 +103,39 @@
             color: white;
         }
 
+        /* Song info marquee - positioned near volume slider */
+        .song-info {
+            position: absolute;
+            top: 43px; /* Much closer to volume slider */
+            right: 15px;
+            width: 125px; /* Narrower to better match volume slider */
+            height: 18px; /* Slightly shorter */
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 3px 5px;
+            z-index: 20;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .song-text {
+            white-space: nowrap;
+            color: #ddd;
+            font-size: 0.9rem;
+            animation: marquee-scroll 12s linear infinite;
+        }
+        
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(140px); /* Start from right edge */
+            }
+            100% {
+                transform: translateX(-100%); /* Move completely off left edge */
+            }
+        }
+
         /* current thoughts */
         .current-container {
             position: absolute;
@@ -189,6 +222,11 @@
         <div class="volume-control">
             <span class="volume-icon">VOL</span>
             <input type="range" min="0" max="1" step="0.1" value="0.5" class="volume-slider" id="volume-slider"> <!-- Can set volume to 50%. Don't forget to change the real actual value in the fake-index page as well -->
+        </div>
+        
+        <!-- Song info marquee -->
+        <div class="song-info">
+            <div class="song-text">Planning for Burial  -  Purple</div>
         </div>
     </div>
     <script>
