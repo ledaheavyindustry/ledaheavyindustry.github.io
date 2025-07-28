@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    cursor: url('assets/image/cursor_b.webp'), auto;
+    cursor: url('assets/image/cursor_b.webp') 20 8, auto; /* 20 8 means I've put 20 pixels from the left edge and 5 from the top (hotspot). To change if you change the image */
     min-width: 1200px;
     overflow: auto; /* Allow scrolling when content overflows (like high zoom) */
 }
@@ -74,12 +74,12 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s;
     font-size: 1rem;
-    cursor: url('assets/image/cursor_b.webp'), pointer;
+    cursor: url('assets/image/cursor_b.webp') 20 8, pointer;
 }
 
 .sidebar a:hover {
     background-color: gray;
-    cursor: url('assets/image/cursor_b.webp'), auto;
+    cursor: url('assets/image/cursor_b.webp') 20 8, auto;
 }
 
 /* Main Content */
