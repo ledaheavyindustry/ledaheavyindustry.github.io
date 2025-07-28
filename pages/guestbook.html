@@ -30,6 +30,7 @@
             background-color: #111;
         }
     </style>
+
 </head>
 <body>
     <!-- Using the existing credits-container styling from style.css -->
@@ -48,5 +49,17 @@
             ></iframe>
         </div>
     </div>
+    <div class="volume-control">
+        <span class="volume-icon">VOL</span>
+        <input type="range" min="0" max="1" step="0.1" value="0.5" class="volume-slider" id="volume-slider">
+    </div>
+    <script>
+        document.getElementById('volume-slider').addEventListener('input', function() {
+            const audio = parent.document.getElementById('background-audio');
+            if (audio) {
+                audio.volume = this.value;
+            }
+        });
+    </script>
 </body>
 </html>
