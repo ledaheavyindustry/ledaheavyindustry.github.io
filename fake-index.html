@@ -17,6 +17,11 @@
         Your browser does not support the audio tag.
     </audio>
     
+    <!-- UI Sound (Hidden, plays on navigation clicks) -->
+    <audio id="ui-sound" preload="auto" style="display:none;">
+        <source src="pages/assets/audio/ui_sound.wav" type="audio/wav">
+    </audio>
+    
     <!-- Fixed width wrapper for the entire layout -->
     <div class="layout-wrapper">
         <!-- Left Navigation Sidebar -->
@@ -57,7 +62,22 @@
     </div>
     
     <script>
+        // Set background music volume
         document.getElementById('background-audio').volume = 0.5; // Sets volume to 50%. Don't forget to change the displayed value in the home page as well
+        
+        // UI Sound on navigation clicks (progressive enhancement)
+        // Site works perfectly without this - just adds sound when JS is enabled
+        const uiSound = document.getElementById('ui-sound');
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+        
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (uiSound) {
+                    uiSound.currentTime = 0; // Reset to start for rapid clicks
+                    uiSound.play().catch(() => {}); // Ignore play errors
+                }
+            });
+        });
     </script>      
 
 </body>
