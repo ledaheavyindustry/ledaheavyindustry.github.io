@@ -72,11 +72,37 @@
     </div>
     
     <script>
-        document.getElementById('volume-slider').addEventListener('input', function() {
-            const audio = parent.document.getElementById('background-audio');
-            if (audio) {
-                audio.volume = this.value;
+        document.addEventListener('DOMContentLoaded', function() {
+            const backgroundAudio = parent.document.getElementById('background-audio');
+
+            // --- Volume Slider Logic ---
+            const volumeSlider = document.getElementById('volume-slider');
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', function() {
+                    if (backgroundAudio) {
+                        backgroundAudio.volume = this.value;
+                    }
+                });
             }
+
+            // --- Media Pause/Resume Logic ---
+            function pauseBackgroundMusic() {
+                if (backgroundAudio) {
+                    backgroundAudio.pause();
+                }
+            }
+
+            function resumeBackgroundMusic() {
+                if (backgroundAudio) {
+                    backgroundAudio.play();
+                }
+            }
+
+            const allMediaPlayers = document.querySelectorAll('video, audio');
+            allMediaPlayers.forEach(function(player) {
+                player.addEventListener('play', pauseBackgroundMusic);
+                player.addEventListener('pause', resumeBackgroundMusic);
+            });
         });
     </script>
 </body>
