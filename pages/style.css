@@ -689,9 +689,9 @@ body {
 .update-text {
     position: absolute;
     top: 50%;
-    left: 20px; /* Position from left edge */
+    left: 10px; /* Position from left edge */
     transform: translateY(-50%); /* Vertically center */
-    width: 160px;
+    width: 175px;
     height: 120px; /* Fixed height to maintain same visual size */
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
