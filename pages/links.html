@@ -5,7 +5,6 @@
     <title>links</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* These styles ensure the page content fits properly in the iframe */
         html, body {
             margin: 0;
             padding: 0;
@@ -95,7 +94,7 @@
         hr {
             border: none;
             height: 1px;
-            background-color: #333; /* Dark gray line */
+            background-color: #333;
             margin: 30px auto; /* Space above and below */
             width: 80%; /* Not full width */
         }
@@ -224,16 +223,29 @@
                <div class="buttons-header">
                     webrings:
                </div>
-               <div style="text-align: center;">
-                    <div style="margin-bottom: 5px;">
-                        <a href="//mr.jhorn.net/index.php"><img src="//mr.jhorn.net/assets/button.gif" style="width: 104px; height: auto;"></a>
+               
+               <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: flex-start;">
+                    <div style="text-align: center;">
+                        <div style="margin-bottom: 5px;">
+                            <a href="//mr.jhorn.net/index.php"><img src="//mr.jhorn.net/assets/button.gif" style="width: 104px; height: auto;"></a>
+                        </div>
+                        <div>
+                            <a href="//mr.jhorn.net/prev.php?slug=ledaheavyindust" style="color: #ddd; text-decoration: underline; margin: 0 5px;">prev</a>
+                            <a href="//mr.jhorn.net/rand.php" style="color: #ddd; text-decoration: underline; margin: 0 5px;">rand</a>
+                            <a href="//mr.jhorn.net/next.php?slug=ledaheavyindust" style="color: #ddd; text-decoration: underline; margin: 0 5px;">next</a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="//mr.jhorn.net/prev.php?slug=ledaheavyindust" style="color: #ddd; text-decoration: underline; margin: 0 5px;">prev</a>
-                        <a href="//mr.jhorn.net/rand.php" style="color: #ddd; text-decoration: underline; margin: 0 5px;">rand</a>
-                        <a href="//mr.jhorn.net/next.php?slug=ledaheavyindust" style="color: #ddd; text-decoration: underline; margin: 0 5px;">next</a>
+                    
+                    <div style="text-align: center;">
+                        <div id='francophonering'>
+                            <script type="text/javascript" src="https://francophonering.neocities.org/onionring-variables.js"></script>
+                            <script type="text/javascript" src="https://francophonering.neocities.org/onionring-widget.js"></script>
+                        </div>
                     </div>
-                </div>
+
+
+
+               </div>
 
             </div>
         </div>
