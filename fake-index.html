@@ -78,6 +78,74 @@
                 }
             });
         });
+        
+        // URL Parameter System for Shareable Links
+        // Maps page names to their file paths
+        const pageMap = {
+            'home': 'pages/home.html',
+            'paintings': 'pages/paintings.html',
+            'gamedev': 'pages/gamedev.html',
+            'music': 'pages/music.html',
+            'film-photography': 'pages/film-photography.html',
+            'drawings': 'pages/drawings.html',
+            'links': 'pages/links.html',
+            'credits': 'pages/credits.html',
+            'guestbook': 'pages/guestbook.html',
+            'thoughts': 'pages/thoughts.html',
+            'liked_music': 'pages/liked_music.html',
+            'liked_dreams': 'pages/liked_dreams.html',
+            'liked_poems': 'pages/liked_poems.html'
+        };
+        
+        // Function to load page from URL parameter
+        function loadPageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = urlParams.get('page');
+            
+            if (page && pageMap[page]) {
+                const iframe = document.querySelector('iframe[name="content-frame"]');
+                if (iframe) {
+                    iframe.src = pageMap[page];
+                }
+            }
+        }
+        
+        // Function to update URL when navigation links are clicked
+        function setupNavigationLinks() {
+            const navLinks = document.querySelectorAll('.sidebar a[target="content-frame"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Find the page name from the href
+                    let pageName = null;
+                    for (const [name, path] of Object.entries(pageMap)) {
+                        if (href === path) {
+                            pageName = name;
+                            break;
+                        }
+                    }
+                    
+                    // Update URL if we found a matching page
+                    if (pageName) {
+                        const newURL = window.location.pathname + '?page=' + pageName;
+                        window.history.pushState({page: pageName}, '', newURL);
+                    }
+                });
+            });
+        }
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            loadPageFromURL();
+        });
+        
+        // Initialize when page loads
+        window.addEventListener('load', function() {
+            loadPageFromURL();
+            setupNavigationLinks();
+        });
     </script>      
 
 </body>
