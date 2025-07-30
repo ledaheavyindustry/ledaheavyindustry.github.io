@@ -684,6 +684,30 @@ body {
     letter-spacing: 1px;
 }
 
+/* Archive content with image and text */
+.archive-content {
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.archive-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #444;
+    align-self: center;
+}
+
+.archive-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ddd;
+    margin: 0;
+}
+
 /* ==================== */
 /* HOME PAGE UPDATE TEXT */
 /* ==================== */
