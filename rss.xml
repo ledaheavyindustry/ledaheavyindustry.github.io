@@ -6,6 +6,14 @@
         <link>https://www.ledaheavyindustry.com</link>
 
         <item>
+            <title>poetry</title>
+            <description>adding some new favorite poems (deafheaven mostly)</description>
+            <link>https://www.ledaheavyindustry.com</link>
+            <guid>5451f0999fefef88zvv</guid>
+            <pubDate>Mon, 28 Jul 2025 23:40 +0200</pubDate>
+        </item> 
+
+        <item>
             <title>backend backend backend</title>
             <description>improving video encoding, pause feature for gamedev music background, removing javascript in some places, adding sharable links</description>
             <link>https://www.ledaheavyindustry.com</link>
