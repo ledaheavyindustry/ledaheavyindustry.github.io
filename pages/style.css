@@ -935,18 +935,11 @@ body {
 /* Description text for sub-versions */
 .sub-text {
     font-size: 0.9rem;
-    color: #bbb;
+    color: #ffffff;
     margin-bottom: 8px;
     line-height: 1.4;
     display: block;
 }
-
-/* Optional: Make the arrow color different for sub-items */
-.sub-text::before {
-    content: "+ "; 
-    color: #666;
-}
-
 
 /* ==================== */
 /* MOBILE RESPONSIVE    */
