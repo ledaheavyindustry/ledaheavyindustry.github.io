@@ -916,6 +916,39 @@ body {
 }
 
 /* ==================== */
+/* NESTED MUSIC BLOCKS  */
+/* ==================== */
+
+/* The container that holds all sub-versions */
+.nested-block {
+    margin-left: 25px;       /* Indentation amount */
+    border-left: 1px solid #444; /* The "tree" line */
+    padding-left: 20px;      /* Spacing between line and content */
+    margin-top: 15px;
+}
+
+/* Individual sub-version entry */
+.sub-item {
+    margin-bottom: 30px; /* Space between different versions */
+}
+
+/* Description text for sub-versions */
+.sub-text {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: block;
+}
+
+/* Optional: Make the arrow color different for sub-items */
+.sub-text::before {
+    content: "+ "; 
+    color: #666;
+}
+
+
+/* ==================== */
 /* MOBILE RESPONSIVE    */
 /* ==================== */
 
