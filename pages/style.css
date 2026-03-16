@@ -464,6 +464,30 @@ body {
     object-fit: cover; /* Changed to cover to maintain aspect ratio while filling width */
 }
 
+/* Square Width Image with No Title - Now with height constraints */
+.catalog-item-square {
+    grid-column: 1 / -1;
+    padding: 0;
+    border: 1px solid #4b4b4b;
+    max-height: 700px; /* Added height constraint */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.catalog-item-square .catalog-item-image {
+    margin: 0;
+    height: 100%;
+    max-height: 700px; /* Match container height */
+    display: flex;
+    align-items: center;
+}
+
+.catalog-item-square .catalog-item-image img {
+    max-height: 700px; /* Constrain image height */
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover; /* Changed to cover to maintain aspect ratio while filling width */
+}
+
 /* Full Width Item for Videos - special handling */
 .catalog-item-full.has-video {
     max-height: none; /* Remove height constraint completely */
@@ -520,6 +544,8 @@ body {
     max-width: 100%;
     object-fit: contain;
 }
+
+
 
 /* Loading state for catalog */
 .catalog-loading {
