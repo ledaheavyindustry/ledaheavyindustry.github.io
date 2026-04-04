@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* These styles ensure the page content fits properly in the iframe */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="catalog">
+        <div class="catalog-header">
+            <h2>video</h2>
+        </div>
+
+        <div class="titled-content-block">
+            <h3 class="content-title">-> 04/04/2026: al hoceima. had to compress the video to fit it in my website but you can watch the full 4k experience on yt: https://youtu.be/jR0HZaA6_PM?si=tPPyUljamh6j1Kse</h3>
+            <div class="catalog-item" style="padding: 20px; text-align: center;">
+            <div class="catalog-item catalog-item-full has-video">
+                <div class="catalog-item-video">
+                    <video controls poster="assets/content/videos/hoceima.png">
+                        <source src="assets/content/videos/hoceima_compressed.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-details">
+                    <h3 class="video-title">al hoceima</h3>
+                    <p class="video-description">went back to my grandparents hometown, the plane ticket was dirt cheap so it was worth it even if it was for a couple of days. i've always spent my summer days here so it was quite different looking at it from a spring perspective, where everything is green and the city less crowded. the city fills me with nostalgia, i had the reborn openings playing on loop the entier time, thinking of my childhood days spent there mostly watching anime, playing web games and going to the beach. i also managed to get my hands on our family's old camcorder so i'll be shooting some more videos with it once i figure it out </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backgroundAudio = parent.document.getElementById('background-audio');
+
+            // --- Existing Volume Slider Logic --- This small piece of code is independant from the rest sort of
+            const volumeSlider = document.getElementById('volume-slider');
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', function() {
+                    if (backgroundAudio) {
+                        backgroundAudio.volume = this.value;
+                    }
+                });
+            }
+
+            // --- New Media Pause/Resume Logic ---
+            function pauseBackgroundMusic() {
+                if (backgroundAudio) {
+                    backgroundAudio.pause();
+                }
+            }
+
+            function resumeBackgroundMusic() {
+                if (backgroundAudio) {
+                    backgroundAudio.play();
+                }
+            }
+
+            const allMediaPlayers = document.querySelectorAll('video, audio');
+            allMediaPlayers.forEach(function(player) {
+                player.addEventListener('play', pauseBackgroundMusic);
+                player.addEventListener('pause', resumeBackgroundMusic);
+            });
+        });
+    </script>
+    <div class="volume-control">
+        <span class="volume-icon">VOL</span>
+        <input type="range" min="0" max="1" step="0.1" value="0.5" class="volume-slider" id="volume-slider">
+    </div>
+    <script>
+        document.getElementById('volume-slider').addEventListener('input', function() {
+            const audio = parent.document.getElementById('background-audio');
+            if (audio) {
+                audio.volume = this.value;
+            }
+        });
+    </script>
+</body>
+</html>
