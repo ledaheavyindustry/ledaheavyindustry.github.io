@@ -5,7 +5,7 @@
     <title>archive</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* These styles ensure the page content fits properly in the iframe */
+        /* ensure the page content fits properly in the iframe */
         html, body {
             margin: 0;
             padding: 0;
@@ -60,7 +60,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const backgroundAudio = parent.document.getElementById('background-audio');
 
-            // --- Existing Volume Slider Logic --- This small piece of code is independant from the rest sort of
+            // volume slider. This small piece of code is independant from the rest sort of
             const volumeSlider = document.getElementById('volume-slider');
             if (volumeSlider) {
                 volumeSlider.addEventListener('input', function() {
@@ -70,7 +70,7 @@
                 });
             }
 
-            // --- New Media Pause/Resume Logic ---
+            // pause/resume
             function pauseBackgroundMusic() {
                 if (backgroundAudio) {
                     backgroundAudio.pause();
