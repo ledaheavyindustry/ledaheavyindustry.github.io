@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdjectiveObject</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link rel="icon" type="image/x-icon" href="Media/heartbrowser.ico">
+    <link href="Style/CSS/simple.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Style/CSS/cursor.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+
+    </style>
+  </head>
+  <body id="body">
+    
+  <h1 id="Title">Warning!</h1>
+  
+  <p>This website by default contains a lot of flickering and flashing lights. If that's going to affect you, there's a no flickering version to look at instead! Keep yourself safe! &lt;3</p>
+  <p>(it's also designed for desktop. i probably do not recommend trying to navigate on mobile)</p>
+  
+  <button class="btn btn--ghost" type="button" onclick="window.location = `home.html`"><span>Continue</span></button>
+  <button class="btn btn--ghost" type="button" onclick="window.location = `NonFlashing/home.html`"><span>Non Flashing</span></button>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="Style/JS/cursor.js"></script>
+  <script>
+    function redirect() {
+      window.location = `home.html`;
+    }
+  </script>
+  </body>
+</html>
